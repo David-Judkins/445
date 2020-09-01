@@ -1,0 +1,9 @@
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\NumberSortApp\bin\Debug\NumberSortApp.exe.config
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\NumberSortApp\bin\Debug\NumberSortApp.exe
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\NumberSortApp\bin\Debug\NumberSortApp.pdb
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\NumberSortApp\obj\Debug\NumberSortApp.Form1.resources
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\NumberSortApp\obj\Debug\NumberSortApp.Properties.Resources.resources
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\NumberSortApp\obj\Debug\NumberSortApp.csproj.GenerateResource.cache
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\NumberSortApp\obj\Debug\NumberSortApp.csproj.CoreCompileInputs.cache
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\NumberSortApp\obj\Debug\NumberSortApp.exe
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\NumberSortApp\obj\Debug\NumberSortApp.pdb

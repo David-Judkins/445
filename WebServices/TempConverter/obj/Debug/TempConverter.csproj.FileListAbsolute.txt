@@ -1,0 +1,7 @@
+C:\Users\lilju\Desktop\REPO\445\WebServices\TempConverter\obj\Debug\TempConverter.csprojAssemblyReference.cache
+C:\Users\lilju\Desktop\REPO\445\WebServices\TempConverter\obj\Debug\TempConverter.csproj.CoreCompileInputs.cache
+C:\Users\lilju\Desktop\REPO\445\WebServices\TempConverter\bin\TempConverter.dll.config
+C:\Users\lilju\Desktop\REPO\445\WebServices\TempConverter\bin\TempConverter.dll
+C:\Users\lilju\Desktop\REPO\445\WebServices\TempConverter\bin\TempConverter.pdb
+C:\Users\lilju\Desktop\REPO\445\WebServices\TempConverter\obj\Debug\TempConverter.dll
+C:\Users\lilju\Desktop\REPO\445\WebServices\TempConverter\obj\Debug\TempConverter.pdb

@@ -1,0 +1,9 @@
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\TempConverterApp\bin\Debug\TempConverterApp.exe.config
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\TempConverterApp\bin\Debug\TempConverterApp.exe
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\TempConverterApp\bin\Debug\TempConverterApp.pdb
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\TempConverterApp\obj\Debug\TempConverterApp.csprojAssemblyReference.cache
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\TempConverterApp\obj\Debug\TempConverterApp.Properties.Resources.resources
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\TempConverterApp\obj\Debug\TempConverterApp.csproj.GenerateResource.cache
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\TempConverterApp\obj\Debug\TempConverterApp.csproj.CoreCompileInputs.cache
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\TempConverterApp\obj\Debug\TempConverterApp.exe
+C:\Users\lilju\Desktop\REPO\445\WindowsApps\TempConverterApp\obj\Debug\TempConverterApp.pdb
