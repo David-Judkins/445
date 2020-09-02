@@ -1,14 +1,12 @@
-﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="NumberSortWebSite.Contact" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="NumberSortWebSite.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    <h3>Your contact page.</h3>
+    <h2><%: Title %>Davids Contact Information</h2>
+    <p>-------------------------------------</p>
     <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
+        806 W Brown St<br />
+        Tempe, AZ 85281<br />
+        <abbr title="Phone">P:</abbr> 703.725.8195</address>
 
     <address>
         <strong>Support:</strong>   <a href="mailto:judkinsdavid12@gmail.com">judkinsdavid12@gmail.com</a><br />

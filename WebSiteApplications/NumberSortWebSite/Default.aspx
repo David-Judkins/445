@@ -12,8 +12,8 @@
         <asp:TextBox ID="ListInput" runat="server" Height="18px" Width="608px"></asp:TextBox>
         <br />
         <br />
-        <asp:Button ID="Button1" runat="server" BackColor="Black" BorderColor="#336600" BorderStyle="Inset" BorderWidth="3px" ForeColor="White" Text="Click here when youre ready" OnClick="Button1_Click" Width="650px" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button1" runat="server" BackColor="Black" BorderColor="#336600" BorderStyle="Inset" BorderWidth="3px" ForeColor="White" Text="Click here when youre ready" OnClick="Button1_Click" Width="650px" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
         <asp:Label ID="ListPrint" runat="server" Text="THE SORTED LIST WILL APPEAR HERE!" ForeColor="#CC0000"></asp:Label>
        
     </div>

@@ -1272,6 +1272,7 @@ h2,
 h3,
 .h3 {
   font-size: 24px;
+    height: 26px;
 }
 h4,
 .h4 {
@@ -1288,6 +1289,7 @@ h6,
 p {
   margin: 0 0 10px;
     width: 1909px;
+    font-size: small;
 }
 .lead {
   margin-bottom: 20px;
@@ -4293,8 +4295,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   position: fixed;
-  right: -4px;
-  left: 4px;
+  right: 0px;
+  left: 0px;
   z-index: 1030;
 }
 .navbar-fixed-top .navbar-collapse,
@@ -4326,8 +4328,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .container-fluid > .navbar-header,
 .container > .navbar-collapse,
 .container-fluid > .navbar-collapse {
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 @media (min-width: 768px) {
   .container > .navbar-header,
@@ -4349,7 +4351,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand {
   float: left;
-  height: 50px;
+  height: 33px;
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
@@ -4667,9 +4669,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse {
   background-color: #222;
   border-color: #080808;
+    height: 86px;
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;
+    width: 224px;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
