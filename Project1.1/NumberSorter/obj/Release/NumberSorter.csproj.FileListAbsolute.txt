@@ -1,0 +1,6 @@
+C:\Users\lilju\Desktop\REPO\445\Project1.1\NumberSorter\bin\NumberSorter.dll.config
+C:\Users\lilju\Desktop\REPO\445\Project1.1\NumberSorter\bin\NumberSorter.dll
+C:\Users\lilju\Desktop\REPO\445\Project1.1\NumberSorter\bin\NumberSorter.pdb
+C:\Users\lilju\Desktop\REPO\445\Project1.1\NumberSorter\obj\Release\NumberSorter.csproj.CoreCompileInputs.cache
+C:\Users\lilju\Desktop\REPO\445\Project1.1\NumberSorter\obj\Release\NumberSorter.dll
+C:\Users\lilju\Desktop\REPO\445\Project1.1\NumberSorter\obj\Release\NumberSorter.pdb

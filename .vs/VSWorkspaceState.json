@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Project1.2",
+    "\\Project1.2\\DavidJudkinsBrowser",
+    "\\Project1.2\\packages"
   ],
-  "SelectedNode": "\\WebServices",
+  "SelectedNode": "\\Project1.2\\Project1.2.sln",
   "PreviewInSolutionExplorer": false
 }

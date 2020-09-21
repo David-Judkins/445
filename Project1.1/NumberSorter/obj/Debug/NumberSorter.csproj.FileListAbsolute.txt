@@ -1,0 +1,7 @@
+C:\Users\lilju\Desktop\REPO\445\Project1.1\NumberSorter\bin\NumberSorter.dll.config
+C:\Users\lilju\Desktop\REPO\445\Project1.1\NumberSorter\bin\NumberSorter.dll
+C:\Users\lilju\Desktop\REPO\445\Project1.1\NumberSorter\bin\NumberSorter.pdb
+C:\Users\lilju\Desktop\REPO\445\Project1.1\NumberSorter\obj\Debug\NumberSorter.csprojAssemblyReference.cache
+C:\Users\lilju\Desktop\REPO\445\Project1.1\NumberSorter\obj\Debug\NumberSorter.csproj.CoreCompileInputs.cache
+C:\Users\lilju\Desktop\REPO\445\Project1.1\NumberSorter\obj\Debug\NumberSorter.dll
+C:\Users\lilju\Desktop\REPO\445\Project1.1\NumberSorter\obj\Debug\NumberSorter.pdb
