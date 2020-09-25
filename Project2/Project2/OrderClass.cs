@@ -12,7 +12,7 @@ namespace Project2
         private string park;
         private int amount;
         private double unitPrice;
-
+           
         public OrderClass()
         {
             this.senderID = 0;
