@@ -29,7 +29,7 @@ namespace Project2
             for (int i = 0; i < 5; i++)
             {
                 // Start N retailer threads
-                ticketAgencies[i] = new Thread(new ThreadStart(ticketAgency.retailerFunc));
+                ticketAgencies[i] = new Thread(new ThreadStart(ticketAgency.RetailerFunc));
                 ticketAgencies[i].Name = (i + 1).ToString();
                 ticketAgencies[i].Start();
                 
