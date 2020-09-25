@@ -7,7 +7,7 @@ namespace Project2
     public delegate void priceCutEventLL(Int32 pr); // Define a delegate 
 
 
-
+    //V1 starting point
     
     public class eCommerce
     {
