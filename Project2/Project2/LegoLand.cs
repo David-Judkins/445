@@ -9,18 +9,18 @@ namespace Project2
     {
         static Random rng = new Random(); // To generate random numbers 
         public static event priceCutEventLL priceCut; // Link event to delegate 
-        private static Int32 ticketPriceLL = 10;
-        public Int32 getPrice() { return ticketPriceLL; }
+        private static Int32 ticketPrice = 10;
+        public Int32 getPrice() { return ticketPrice; }
         public static void changePrice(Int32 price)
         {
-            if (price < ticketPriceLL)
+            if (price < ticketPrice)
             {    // a price cut 
                 if (priceCut != null)  // there is at least a subscriber
                     priceCut(price);    // emit event to subscribers
 
-                ticketPriceLL = price;
+                ticketPrice = price;
             }
-            ticketPriceLL = price;
+            ticketPrice = price;
         }
         public void PricingModel()
         {

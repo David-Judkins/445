@@ -8,7 +8,7 @@ namespace Project2
 
 
 
-
+    
     public class eCommerce
     {
         static void Main(string[] args)
@@ -30,7 +30,7 @@ namespace Project2
             {
                 // Start N retailer threads
                 ticketAgencies[i] = new Thread(new ThreadStart(ticketAgency.retailerFunc));
-                ticketAgencies[i].Name = (0 + 1).ToString();
+                ticketAgencies[i].Name = (i + 1).ToString();
                 ticketAgencies[i].Start();
                 
 
