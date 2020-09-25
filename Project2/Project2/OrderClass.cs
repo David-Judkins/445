@@ -13,7 +13,7 @@ namespace Project2
         private int amount;
         private double unitPrice;
 
-        OrderClass()
+        public OrderClass()
         {
             this.senderID = 0;
             this.cardNo = cardNo = 0;
@@ -56,6 +56,24 @@ namespace Project2
         public void setPark(string parkName)
         {
             this.park = parkName;
+        }
+
+        public int getAmount()
+        {
+            return this.amount;
+        }
+        public void setAmount(int amount)
+        {
+            this.amount = amount;
+        }
+
+        public double getUnitPrice()
+        {
+            return this.unitPrice;
+        }
+        public void setUnitPrice(double price)
+        {
+            this.unitPrice = price;
         }
     }
 }
