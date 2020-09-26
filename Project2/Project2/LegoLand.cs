@@ -5,19 +5,22 @@ using System.Threading;
 
 namespace Project2
 {
+    //public delegate void priceCutEventLL(Int32 pr);
     class LegoLand
     {
         static Random rng = new Random(); // To generate random numbers 
         public static event priceCutEventLL priceCut; // Link event to delegate 
         private static Int32 ticketPrice = 10;
+        private static Int32 priceDiff = 0;
         public Int32 getPrice() { return ticketPrice; }
+        public Int32 getPriceDiff() { return priceDiff; }
         public static void changePrice(Int32 price)
         {
             if (price < ticketPrice)
             {    // a price cut 
                 if (priceCut != null)  // there is at least a subscriber
                     priceCut(price);    // emit event to subscribers
-
+                priceDiff = ticketPrice - price;
                 ticketPrice = price;
             }
             ticketPrice = price;

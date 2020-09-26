@@ -5,11 +5,13 @@ using System.Threading;
 
 namespace Project2
 {
+    //public delegate void priceCutEventDL(Int32 pr); // Define a delegate 
     class DisneyLand
     {
         static Random rng = new Random(); // To generate random numbers 
         public static event priceCutEventDL priceCut; // Link event to delegate 
         private static Int32 ticketPrice = 10;
+        private static Int32 priceDiff = 0;
         private static Int32 pcCount = 0;
         public Int32 getPrice() { return ticketPrice; }
         public static void changePrice(Int32 price)
@@ -18,7 +20,7 @@ namespace Project2
             {    // a price cut 
                 if (priceCut != null)  // there is at least a subscriber
                     priceCut(price);    // emit event to subscribers
-
+                priceDiff = ticketPrice - price;
                 ticketPrice = price;
                 pcCount++;
             }
@@ -29,8 +31,9 @@ namespace Project2
             for (Int32 i = 0; i < 50; i++)
             {
                 Thread.Sleep(500);
-                // Take the order from the queue of the orders; // Decide the price based on the orders
-                Int32 p = rng.Next(5, 10); // Console.WriteLine("New Price is {0}", p);
+                // Take the order from the queue of the orders; 
+                // Decide the price based on the orders
+                Int32 p = rng.Next(80, 300); // Console.WriteLine("New Price is {0}", p);
                 DisneyLand.changePrice(p);
             }
         }

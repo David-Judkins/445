@@ -13,6 +13,8 @@ namespace Project2
     {
         static void Main(string[] args)
         {
+            
+           
             LegoLand ticketLL = new LegoLand();
             DisneyLand ticketDL = new DisneyLand();
             Thread legoland = new Thread(new ThreadStart(ticketLL.PricingModel)); 
