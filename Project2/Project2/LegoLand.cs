@@ -47,6 +47,7 @@ namespace Project2
                 {
                     eCommerce.rwLock.ReleaseReaderLock();
                 }
+                
                 // Take the order from the queue of the orders; // Decide the price based on the orders
                 int p = rng.Next(80, 300); // Console.WriteLine("New Price is {0}", p);
                 LegoLand.changePrice(p);
