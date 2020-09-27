@@ -77,11 +77,12 @@ namespace Project2
             cardNum = CreditCardNum();
             if(ticketAmount != -1)
             {
+                Console.WriteLine("Price Cut! Travel Agency {0} will send an order to {1} for {2} tickets at ${3} each", senderID, Thread.CurrentThread.Name
+                , ticketAmount, unitPrice);
                 OrderClass newOrder = new OrderClass(senderID, cardNum, park, ticketAmount, unitPrice);
                 return newOrder;
             }
-            Console.WriteLine("Price Cut! Travel Agency {0} will send an order to {1} for {2} tickets at ${3} each", senderID, Thread.CurrentThread.Name
-                , ticketAmount, unitPrice);
+            
             return null;
 
         }   
@@ -89,6 +90,7 @@ namespace Project2
         { // Event handler // order chickens from chicken farm – send order into queue
             OrderClass order = CreateOrder(price, priceDiff, park, senderID);
             eCommerce.rwLock.AcquireWriterLock(300);
+           
             try
             {
                 eCommerce.buffer.setACell(order);
@@ -97,7 +99,7 @@ namespace Project2
             {
                 eCommerce.rwLock.ReleaseWriterLock();
             }
-            
+           
 
             
                 

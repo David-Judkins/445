@@ -51,6 +51,8 @@ namespace Project2
                 {
                     eCommerce.rwLock.ReleaseReaderLock();
                 }
+                
+
                 int p = rng.Next(80, 300); // Console.WriteLine("New Price is {0}", p);
                 DisneyLand.changePrice(p);
             }

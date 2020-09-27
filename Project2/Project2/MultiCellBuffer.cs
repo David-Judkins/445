@@ -27,6 +27,7 @@ namespace Project2
                     {
                         Console.WriteLine("Set cell " + i + " with " + order.getSenderID());
                         orderBuffer[i] = order;
+                        i = 4;
                     }
                 }
             }
