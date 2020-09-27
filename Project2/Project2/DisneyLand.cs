@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+
 using System.Threading.Tasks;
 using System.Threading;
 
@@ -28,13 +29,19 @@ namespace Project2
                 {  // there is at least a subscriber
                    // emit event to subscribers
                     priceDiff = ticketPrice - price;
+                    
                     priceCut(price, priceDiff, "DisneyLand");
                     
+
                     ticketPrice = price;
                     priceCutCount++;
                 }
             }
             ticketPrice = price;
+        }
+        public void NewPrice(int currentPrice)
+        {
+
         }
         public void PricingModel()
         {
@@ -42,16 +49,29 @@ namespace Project2
             {
                 Thread.Sleep(500);
                 OrderClass order = null;
-                eCommerce.rwLock.AcquireReaderLock(300);
-                try
+               
+                    eCommerce.rwLock.AcquireReaderLock(Timeout.Infinite);
+                    try
+                    {
+                        order = eCommerce.buffer.getACell();
+                        
+                    }
+                    finally
+                    {
+                        eCommerce.rwLock.ReleaseReaderLock();
+                    }
+
+                if (order != null)
                 {
-                    order = eCommerce.buffer.getACell();
+                    if ("DisneyLand" == order.getReceiverID())
+                    {
+                        
+                        eCommerce.buffer.eraseACell(order);
+                        
+
+                    }
+
                 }
-                finally
-                {
-                    eCommerce.rwLock.ReleaseReaderLock();
-                }
-                
 
                 int p = rng.Next(80, 300); // Console.WriteLine("New Price is {0}", p);
                 DisneyLand.changePrice(p);

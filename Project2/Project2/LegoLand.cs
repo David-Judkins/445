@@ -38,16 +38,30 @@ namespace Project2
             {
                 Thread.Sleep(500);
                 OrderClass order = null;
-                eCommerce.rwLock.AcquireReaderLock(300);
-                try
-                {
-                    order = eCommerce.buffer.getACell();
-                }
-                finally
-                {
-                    eCommerce.rwLock.ReleaseReaderLock();
-                }
-                
+               
+                    eCommerce.rwLock.AcquireReaderLock(Timeout.Infinite);
+                    try
+                    {
+                        order = eCommerce.buffer.getACell();
+                        
+                    }
+                    finally
+                    {
+                        eCommerce.rwLock.ReleaseReaderLock();
+                    }
+                    if (order != null)
+                    {
+                        if ("LegoLand" == order.getReceiverID())
+                        {
+                        
+                            eCommerce.buffer.eraseACell(order);
+
+                        }
+
+                    }
+
+
+
                 // Take the order from the queue of the orders; // Decide the price based on the orders
                 int p = rng.Next(80, 300); // Console.WriteLine("New Price is {0}", p);
                 LegoLand.changePrice(p);

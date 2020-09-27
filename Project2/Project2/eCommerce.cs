@@ -10,7 +10,7 @@ namespace Project2
     {
         public static MultiCellBuffer buffer = new MultiCellBuffer();
         public static ReaderWriterLock rwLock = new ReaderWriterLock();
-        
+
         static void Main(string[] args)
         {
 

@@ -9,25 +9,38 @@ namespace Project2
 {
     class TicketAgency
     {
-        private string senderID;
+
+        private static string senderID;
+        /// <summary>method
+        /// <c>RetailerFunc</c>
+        /// for starting a thread
+        /// </summary>
+        /// <returns>void</returns>
         public void RetailerFunc()
-        { //for starting thread 
-            Random rand = new Random();
+        { 
+             
+        Random rand = new Random();
             LegoLand ticket = new LegoLand();
             DisneyLand ticket1 = new DisneyLand();
             
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             {
                 
-                    Thread.Sleep(1000);
-                    int p = ticket.getPrice();
-                    int p1 = ticket1.getPrice();
-                    Console.WriteLine("DisneyLand{0} has everyday low price: ${1} each", Thread.CurrentThread.Name, p);
-                    Console.WriteLine("LegoLand{0} has everyday low price: ${1} each", Thread.CurrentThread.Name, p);
-                    senderID = Thread.CurrentThread.Name;
+                    Thread.Sleep(500);
+                    senderID = Thread.CurrentThread.Name; // checks what ticket agency is running every 500 ms 10 seconds
+
+
+
+
             }
 
         }
+       
+        /// <summary>method
+        /// <c>CreditCardNum</c>
+        /// Randomizes a credit card number for each order
+        /// </summary>
+        /// <returns>int</returns>
         public int CreditCardNum()
         {
             Random rand = new Random();
@@ -41,6 +54,11 @@ namespace Project2
             
             return Int32.Parse(cardNum);
         }
+        /// <summary>method
+        /// <c>TicketAmount</c>
+        /// calculates the ticket amount based off the price difference of each price cut
+        /// </summary>
+        /// <returns>int</returns>
         public int TicketAmount(int priceDiff, string parkName) {
             Random rand = new Random();
             if (parkName == "LegoLand") {
@@ -69,6 +87,11 @@ namespace Project2
             }
             return -1;
         }
+        /// <summary>method
+        /// <c>CreateOrder</c>
+        /// Creates and returns and order
+        /// </summary>
+        /// <returns>OrderClass</returns>
         public OrderClass CreateOrder(double unitPrice, int priceDiff, string park, string senderID)
         {
             int cardNum;
@@ -77,7 +100,7 @@ namespace Project2
             cardNum = CreditCardNum();
             if(ticketAmount != -1)
             {
-                Console.WriteLine("Price Cut! Travel Agency {0} will send an order to {1} for {2} tickets at ${3} each", senderID, Thread.CurrentThread.Name
+                Console.WriteLine("Price Cut at {1}! Travel Agency {0} will send an order for {2} tickets at ${3} each", senderID, Thread.CurrentThread.Name
                 , ticketAmount, unitPrice);
                 OrderClass newOrder = new OrderClass(senderID, cardNum, park, ticketAmount, unitPrice);
                 return newOrder;
@@ -85,21 +108,32 @@ namespace Project2
             
             return null;
 
-        }   
+        }
+        /// <summary>method
+        /// <c>TicketOnSale</c>
+        /// uses readerwriterlock to add an order when a pricecut happens
+        /// </summary>
+        /// <returns>void</returns>
         public void TicketOnSale(double price, int priceDiff, string park)
         { // Event handler // order chickens from chicken farm – send order into queue
-            OrderClass order = CreateOrder(price, priceDiff, park, senderID);
-            eCommerce.rwLock.AcquireWriterLock(300);
-           
-            try
-            {
-                eCommerce.buffer.setACell(order);
-            }
-            finally
-            {
-                eCommerce.rwLock.ReleaseWriterLock();
-            }
-           
+            
+              eCommerce.rwLock.AcquireWriterLock(300);
+                try
+                {
+                    OrderClass order = CreateOrder(price, priceDiff, park, senderID);
+                    eCommerce.buffer.setACell(order);
+
+                }
+                finally
+                {
+                    eCommerce.rwLock.ReleaseWriterLock();
+                }
+            
+            
+            
+
+         
+         
 
             
                 
