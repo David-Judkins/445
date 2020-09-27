@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anya5\\source\\repos\\445\\Project2\\Project2\\Project2.csproj": {}
+    "C:\\Users\\anya5\\Source\\Repos\\445\\Project2\\Project2\\Project2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anya5\\source\\repos\\445\\Project2\\Project2\\Project2.csproj": {
+    "C:\\Users\\anya5\\Source\\Repos\\445\\Project2\\Project2\\Project2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anya5\\source\\repos\\445\\Project2\\Project2\\Project2.csproj",
+        "projectUniqueName": "C:\\Users\\anya5\\Source\\Repos\\445\\Project2\\Project2\\Project2.csproj",
         "projectName": "Project2",
-        "projectPath": "C:\\Users\\anya5\\source\\repos\\445\\Project2\\Project2\\Project2.csproj",
+        "projectPath": "C:\\Users\\anya5\\Source\\Repos\\445\\Project2\\Project2\\Project2.csproj",
         "packagesPath": "C:\\Users\\anya5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anya5\\source\\repos\\445\\Project2\\Project2\\obj\\",
+        "outputPath": "C:\\Users\\anya5\\Source\\Repos\\445\\Project2\\Project2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anya5\\AppData\\Roaming\\NuGet\\NuGet.Config",
