@@ -4,63 +4,55 @@ using System.Text;
 
 namespace Project2
 {
-    class OrderClass
+    public class OrderClass
     {
-        private int senderID;
+        private string senderID;
         private int cardNo;
-        private int recieverID;
-        private string park;
+        private string recieverID;
         private int amount;
         private double unitPrice;
            
-        public OrderClass()
+        public OrderClass(string sID, int cNum, string recID, int tAmount, double uPrice)
         {
-            this.senderID = 0;
-            this.cardNo = cardNo = 0;
-            this.recieverID = 0;
-            this.park = "N/A";
-            this.amount = 0;
-            this.unitPrice = 0.0;
+            this.senderID = sID;
+            this.cardNo = cardNo = cNum;
+            this.recieverID = recID;
+        
+            this.amount = tAmount;
+            this.unitPrice = uPrice;
         }
-        public int getSenderID()
+        public string getSenderID()
         {
-            return this.senderID;
+            return senderID;
         }
-        public void setSenderID(int ID)
+        public void setSenderID(string ID)
         {
             this.senderID = ID;
         }
 
         public int getcardNo()
         {
-            return this.senderID;
+            return cardNo;
         }
         public void setcardNo(int num)
         {
             this.cardNo = num;
         }
 
-        public int getRecieverID()
+        public string getReceiverID()
         {
-            return this.recieverID;
+            return recieverID;
         }
-        public void setRecieverID(int ID)
+        public void setReceiverID(string ID)
         {
             this.recieverID = ID;
         }
 
-        public string getPark()
-        {
-            return this.park;
-        }
-        public void setPark(string parkName)
-        {
-            this.park = parkName;
-        }
+       
 
         public int getAmount()
         {
-            return this.amount;
+            return amount;
         }
         public void setAmount(int amount)
         {
@@ -69,7 +61,7 @@ namespace Project2
 
         public double getUnitPrice()
         {
-            return this.unitPrice;
+            return unitPrice;
         }
         public void setUnitPrice(double price)
         {

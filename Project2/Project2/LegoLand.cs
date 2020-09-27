@@ -1,25 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Threading;
 
 namespace Project2
 {
-    //public delegate void priceCutEventLL(Int32 pr);
+    public delegate void priceCutEventLL(double pr, int pDiff, string parkName);
     class LegoLand
     {
         static Random rng = new Random(); // To generate random numbers 
         public static event priceCutEventLL priceCut; // Link event to delegate 
-        private static Int32 ticketPrice = 10;
-        private static Int32 priceDiff = 0;
-        public Int32 getPrice() { return ticketPrice; }
-        public Int32 getPriceDiff() { return priceDiff; }
-        public static void changePrice(Int32 price)
+        private static int ticketPrice = 10;
+        private static int priceCutCount = 0;
+        private static int priceDiff;
+        public int getPrice() { return ticketPrice; }
+        public int getPriceDiff() { return priceDiff; }
+        public static void changePrice(int price)
         {
             if (price < ticketPrice)
             {    // a price cut 
                 if (priceCut != null)  // there is at least a subscriber
-                    priceCut(price);    // emit event to subscribers
+                 priceDiff = ticketPrice - price;
+                priceCut(price, priceDiff, "LegoLand");    // emit event to subscribers
                 priceDiff = ticketPrice - price;
                 ticketPrice = price;
             }
@@ -27,13 +30,15 @@ namespace Project2
         }
         public void PricingModel()
         {
-            for (Int32 i = 0; i < 50; i++)
+            while(priceCutCount < 20)
             {
                 Thread.Sleep(500);
                 // Take the order from the queue of the orders; // Decide the price based on the orders
-                Int32 p = rng.Next(5, 10); // Console.WriteLine("New Price is {0}", p);
+                int p = rng.Next(80, 300); // Console.WriteLine("New Price is {0}", p);
                 LegoLand.changePrice(p);
             }
+            
+            
         }
     }
 }
