@@ -13,13 +13,13 @@ namespace Project2
 
         static void Main(string[] args)
         {
-
-
             
             LegoLand ticketLL = new LegoLand();
             DisneyLand ticketDL = new DisneyLand();
             Thread legoland = new Thread(new ThreadStart(ticketLL.PricingModel)); 
-            Thread disneyland = new Thread(new ThreadStart(ticketDL.PricingModel)); 
+            Thread disneyland = new Thread(new ThreadStart(ticketDL.PricingModel));
+
+            OrderProcessor processModel = new OrderProcessor();
             
             legoland.Name = "LegoLand"; 
             disneyland.Name = "DisneyLand";
@@ -28,6 +28,8 @@ namespace Project2
             TicketAgency ticketAgency = new TicketAgency();
             LegoLand.priceCut += new priceCutEventLL(ticketAgency.TicketOnSale);
             DisneyLand.priceCut += new priceCutEventDL(ticketAgency.TicketOnSale);
+            OrderProcessor.OrderProcess += new orderSuccess(ticketAgency.OrderProcess);
+
             Thread[] ticketAgencies = new Thread[5];
             for (int i = 0; i < 5; i++)
             {
