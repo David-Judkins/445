@@ -19,11 +19,12 @@ namespace Project2
         public void RetailerFunc()
         { 
              
-        Random rand = new Random();
+            Random rand = new Random();
             LegoLand ticket = new LegoLand();
             DisneyLand ticket1 = new DisneyLand();
+            OrderProcessor newProccess = new OrderProcessor();
             
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 50; i++)
             {
                 
                     Thread.Sleep(500);
@@ -36,6 +37,10 @@ namespace Project2
 
         }
        
+        public void OrderProcess(string senderID, Int32 total, Int32 ticketPrice, Int32 numTickets)
+        {
+            Console.WriteLine("Order Processed! Ticket Agency {0} order is processed. The total amount that has been charged is $" + total + ". A total of " + numTickets + "have been bought for a unit price of " + ticketPrice, senderID, Thread.CurrentThread.Name);
+        }
         /// <summary>method
         /// <c>CreditCardNum</c>
         /// Randomizes a credit card number for each order
