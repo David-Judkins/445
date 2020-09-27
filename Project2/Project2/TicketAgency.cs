@@ -34,12 +34,10 @@ namespace Project2
             string cardNum = null;
             int part1 = rand.Next(1000, 9999);
             int part2 = rand.Next(1000, 9999);
-            //int part3 = rand.Next(1000, 9999);
-            //int part4 = rand.Next(1000, 9999);
+            
             cardNum = part1.ToString();
             cardNum += part2.ToString();
-            //cardNum += part3.ToString();
-            //cardNum += part4.ToString();
+            
             
             return Int32.Parse(cardNum);
         }
@@ -71,7 +69,7 @@ namespace Project2
             }
             return -1;
         }
-        public void CreateOrder(double unitPrice, int priceDiff, string park, string senderID)
+        public OrderClass CreateOrder(double unitPrice, int priceDiff, string park, string senderID)
         {
             int cardNum;
             int ticketAmount;
@@ -80,15 +78,26 @@ namespace Project2
             if(ticketAmount != -1)
             {
                 OrderClass newOrder = new OrderClass(senderID, cardNum, park, ticketAmount, unitPrice);
+                return newOrder;
             }
             Console.WriteLine("Price Cut! Travel Agency {0} will send an order to {1} for {2} tickets at ${3} each", senderID, Thread.CurrentThread.Name
                 , ticketAmount, unitPrice);
+            return null;
 
         }   
         public void TicketOnSale(double price, int priceDiff, string park)
         { // Event handler // order chickens from chicken farm – send order into queue
+            OrderClass order = CreateOrder(price, priceDiff, park, senderID);
+            eCommerce.rwLock.AcquireWriterLock(300);
+            try
+            {
+                eCommerce.buffer.setACell(order);
+            }
+            finally
+            {
+                eCommerce.rwLock.ReleaseWriterLock();
+            }
             
-            CreateOrder(price, priceDiff, park, senderID);
 
             
                 
