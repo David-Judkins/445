@@ -7,27 +7,39 @@ using System.Threading;
 
 namespace Project2
 {
-    public delegate void priceCutEventDL(double pr, int pDiff, string parkName); // Define a delegate 
+    public delegate void priceCutEventDL(double pr, double pDiff, string parkName); // Define a delegate 
+    /// <summary>class
+    /// <c>DisneyLand</c>
+    /// represents disneyland park
+    /// </summary>
+    
     class DisneyLand
     {
         static Random rng = new Random(); // To generate random numbers 
-        public static event priceCutEventDL priceCut; // Link event to delegate 
+        public static event priceCutEventDL priceCut; 
         private OrderProcessor OP = new OrderProcessor();
-        private static int ticketPrice = 10;
+        private static double ticketPrice = 10;
         private static int priceCutCount = 0;
-        private static int priceDiff;
+        private static double priceDiff;
+        private static double currentPrice;
+        private static int currentAmount;
         
-        public int getPrice() { return ticketPrice; }
 
-        public int getPriceDiff() { return priceDiff;}
-        public static void changePrice(int price)
+        public double getPrice() { return ticketPrice; }
+
+        public double getPriceDiff() { return priceDiff;}
+        /// <summary>method
+        /// <c>changePrice</c>
+        /// changes the price and triggering a price cut event if neccessary
+        /// </summary>
+        /// <returns>void</returns>
+        public static void changePrice(double price)
         {
 
             if (price < ticketPrice)
-            {    // a price cut 
+            {    
                 if (priceCut != null)
-                {  // there is at least a subscriber
-                   // emit event to subscribers
+                {  
                     priceDiff = ticketPrice - price;
                     
                     priceCut(price, priceDiff, "DisneyLand");
@@ -39,12 +51,25 @@ namespace Project2
             }
             ticketPrice = price;
         }
-        public void NewPrice(int currentPrice)
+        /// <summary>method
+        /// <c>NewPrice</c>
+        /// creates a new price based on current price and ticket amount
+        /// </summary>
+        /// <returns>void</returns>
+        public double NewPrice(double Price, int Amount)
         {
-
+            Random rand = new Random();
+            double p = rand.NextDouble() * (300 - 80) + 80;
+            return p;
         }
+        /// <summary>method
+        /// <c>PricingModel</c>
+        /// receives/processes orders in order to set the next unit price
+        /// </summary>
+        /// <returns>void</returns>
         public void PricingModel()
         {
+             
             while(priceCutCount < 20)
             {
                 Thread.Sleep(500);
@@ -73,7 +98,7 @@ namespace Project2
 
                 }
 
-                int p = rng.Next(80, 300); // Console.WriteLine("New Price is {0}", p);
+                double p = rng.NextDouble() * (300 - 80) + 80;
                 DisneyLand.changePrice(p);
             }
             

@@ -4,6 +4,11 @@ using System.Text;
 
 namespace Project2
 {
+    /// <summary>class
+    /// <c>OrderClass</c>
+    /// used as order objects
+    /// </summary>
+    /// 
     public class OrderClass
     {
         private string senderID;
@@ -29,7 +34,6 @@ namespace Project2
         {
             this.senderID = ID;
         }
-
         public int getcardNo()
         {
             return cardNo;
@@ -47,9 +51,6 @@ namespace Project2
         {
             this.recieverID = ID;
         }
-
-       
-
         public int getAmount()
         {
             return amount;
@@ -58,7 +59,6 @@ namespace Project2
         {
             this.amount = amount;
         }
-
         public double getUnitPrice()
         {
             return unitPrice;

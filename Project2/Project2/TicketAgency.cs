@@ -7,35 +7,30 @@ using System.Threading;
 
 namespace Project2
 {
+    /// <summary>class
+    /// <c>TicketAgency</c>
+    /// Orders tickets from the parks based on events triggered by the parks(priceCuts)
+    /// </summary>
     class TicketAgency
     {
-
         private static string senderID;
         /// <summary>method
         /// <c>RetailerFunc</c>
-        /// for starting a thread
+        /// for starting a ticket Agency thread
         /// </summary>
         /// <returns>void</returns>
         public void RetailerFunc()
-        { 
-             
-        Random rand = new Random();
+        {     
+            Random rand = new Random();
             LegoLand ticket = new LegoLand();
             DisneyLand ticket1 = new DisneyLand();
             
-            for (int i = 0; i < 20; i++)
-            {
-                
+            for (int i = 0; i < 50; i++)
+            {   
                     Thread.Sleep(500);
                     senderID = Thread.CurrentThread.Name; // checks what ticket agency is running every 500 ms 10 seconds
-
-
-
-
             }
-
-        }
-       
+        }      
         /// <summary>method
         /// <c>CreditCardNum</c>
         /// Randomizes a credit card number for each order
@@ -50,8 +45,7 @@ namespace Project2
             
             cardNum = part1.ToString();
             cardNum += part2.ToString();
-            
-            
+                       
             return Int32.Parse(cardNum);
         }
         /// <summary>method
@@ -59,7 +53,7 @@ namespace Project2
         /// calculates the ticket amount based off the price difference of each price cut
         /// </summary>
         /// <returns>int</returns>
-        public int TicketAmount(int priceDiff, string parkName) {
+        public int TicketAmount(double priceDiff, string parkName) {
             Random rand = new Random();
             if (parkName == "LegoLand") {
                 if(priceDiff <= 10){
@@ -85,14 +79,14 @@ namespace Project2
                     return rand.Next(276, 500);
                 }
             }
-            return -1;
+            return -1;//returns -1 if a ticket amount was not created
         }
         /// <summary>method
         /// <c>CreateOrder</c>
         /// Creates and returns and order
         /// </summary>
         /// <returns>OrderClass</returns>
-        public OrderClass CreateOrder(double unitPrice, int priceDiff, string park, string senderID)
+        public OrderClass CreateOrder(double unitPrice, double priceDiff, string park, string senderID)
         {
             int cardNum;
             int ticketAmount;
@@ -114,15 +108,15 @@ namespace Project2
         /// uses readerwriterlock to add an order when a pricecut happens
         /// </summary>
         /// <returns>void</returns>
-        public void TicketOnSale(double price, int priceDiff, string park)
-        { // Event handler // order chickens from chicken farm – send order into queue
+        public void TicketOnSale(double price, double priceDiff, string park)
+        {
             
-              eCommerce.rwLock.AcquireWriterLock(300);
+                eCommerce.rwLock.AcquireWriterLock(300);
                 try
                 {
                     OrderClass order = CreateOrder(price, priceDiff, park, senderID);
-                    eCommerce.buffer.setACell(order);
-
+                    eCommerce.buffer.setACell(order);//attempts to set a cell into the buffer, we are getting deadlocks here
+                    
                 }
                 finally
                 {
