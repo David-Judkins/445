@@ -43,6 +43,10 @@ namespace Project2
 
             
             }
+            if(!legoland.IsAlive && !disneyland.IsAlive)
+            {
+                Console.WriteLine("Parks are closed!");
+            }
         }
     }
 }

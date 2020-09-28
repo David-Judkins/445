@@ -12,11 +12,10 @@ namespace Project2
     /// represents legoland park
     /// </summary>
     
-    class LegoLand
+    public class LegoLand
     {
         static Random rng = new Random(); // To generate random numbers 
         public static event priceCutEventLL priceCut; // Link event to delegate 
-        private OrderProcessor orderProc = new OrderProcessor();
         private static double ticketPrice = 10;
         private static int priceCutCount = 0;
         private static double priceDiff;
@@ -78,7 +77,9 @@ namespace Project2
                     {
                         if ("LegoLand" == order.getReceiverID())
                         {
-                            
+                            OrderProcessor op = new OrderProcessor();
+                            Thread orderProc = new Thread(new ThreadStart(() => op.orderProcessing(order)));
+                            orderProc.Start();
                             eCommerce.buffer.eraseACell(order);
 
                         }
@@ -91,6 +92,7 @@ namespace Project2
                 double p = rng.NextDouble() * (300 - 80) + 80;
                 LegoLand.changePrice(p);
             }
+           
             
             
         }

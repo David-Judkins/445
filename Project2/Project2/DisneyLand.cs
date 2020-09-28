@@ -13,7 +13,7 @@ namespace Project2
     /// represents disneyland park
     /// </summary>
     
-    class DisneyLand
+    public class DisneyLand
     {
         static Random rng = new Random(); // To generate random numbers 
         public static event priceCutEventDL priceCut;
@@ -91,8 +91,10 @@ namespace Project2
                 {
                     if ("DisneyLand" == order.getReceiverID())
                     {
-                        currentAmount = order.getAmount();
-                        Thread orderProcess = new Thread(new ThreadStart(OP.
+                        
+                        OrderProcessor op = new OrderProcessor();
+                        Thread orderProc = new Thread(new ThreadStart(() => op.orderProcessing(order)));
+                        orderProc.Start();
                         eCommerce.buffer.eraseACell(order);
                         
 
