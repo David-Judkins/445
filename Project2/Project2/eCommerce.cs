@@ -1,5 +1,4 @@
 ﻿using System;
-
 using System.Threading;
 namespace Project2
 
@@ -43,10 +42,7 @@ namespace Project2
 
             
             }
-            if(!legoland.IsAlive && !disneyland.IsAlive)
-            {
-                Console.WriteLine("Parks are closed!");
-            }
+            
         }
     }
 }

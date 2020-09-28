@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
 
 namespace Project2
@@ -19,8 +16,7 @@ namespace Project2
         private static double ticketPrice = 10;
         private static int priceCutCount = 0;
         private static double priceDiff;
-        private double currentPrice;
-        private int currentAmount;
+       
         
         public double getPrice() { return ticketPrice; }
         public double getPriceDiff() { return priceDiff; }
@@ -36,8 +32,8 @@ namespace Project2
                 if (priceCut != null)
                 {
                     priceDiff = ticketPrice - price;
-                    priceCut(price, priceDiff, "LegoLand"); 
-                   
+                    priceCut(price, priceDiff, "LegoLand"); //calls ticket on sale in the ticket agencies
+
                     ticketPrice = price;
                     priceCutCount++;
                 }
@@ -77,9 +73,9 @@ namespace Project2
                     {
                         if ("LegoLand" == order.getReceiverID())
                         {
-                            OrderProcessor op = new OrderProcessor();
-                            Thread orderProc = new Thread(new ThreadStart(() => op.orderProcessing(order)));
-                            orderProc.Start();
+                            OrderProcessor orderProc = new OrderProcessor();
+                            Thread orderProcessorThread = new Thread(new ThreadStart(() => orderProc.orderProcessing(order)));
+                            orderProcessorThread.Start();
                             eCommerce.buffer.eraseACell(order);
 
                         }
@@ -92,9 +88,12 @@ namespace Project2
                 double p = rng.NextDouble() * (300 - 80) + 80;
                 LegoLand.changePrice(p);
             }
-           
-            
-            
+            if (priceCutCount == 20)
+            {
+                Console.WriteLine("LegoLand is closed");
+            }
+
+
         }
     }
 }
