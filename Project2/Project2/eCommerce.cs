@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Threading;
 namespace Project2
+    /*
+     * Team Members: David Judkins (50%) and Anna McDonald(50%)
+     * Both members worked together throughout the whole project and debugged together through Zoom.
+     */
 
 {
     //V1 starting point
