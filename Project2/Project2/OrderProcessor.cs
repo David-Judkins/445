@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 
 namespace Project2
@@ -14,19 +12,21 @@ namespace Project2
     {
         public static event orderSuccess OrderProcess; //create event
 
-        /// <summary>
+        ///<summary>method
+        /// <c>ProcessComplete</c>
         /// Process is called by the orderProcessing class to print parameters in a statement.
         /// </summary>
         /// <param name="senderID"></param>
         /// <param name="total"></param>
         /// <param name="ticketPrice"></param>
         /// <param name="numTickets"></param>
-        public  void ProcessComplete(string senderID, double total, double ticketPrice, int numTickets)
+        public void ProcessComplete(string senderID, double total, double ticketPrice, int numTickets)
         {
             Console.WriteLine("Order Processed! Ticket Agency {0} order is processed. The total amount that has been charged is $" + total + ". A total of " + numTickets + " have been bought for a unit price of $" + ticketPrice + "\n", senderID);
         }
 
-        /// <summary>
+        ///<summary>method
+        /// <c>orderProcessing</c>
         /// Method takes in an order object and uses the card validty to process the order.
         /// If the card is invalid it prints an error message.
         /// If the card is valid it calculates the total price that the agency is buying based on the orders price and ticket numbers and calls ProcessComplete, 
@@ -37,7 +37,7 @@ namespace Project2
 
             if(!checkCredit(orderObject.getcardNo())) //check card validity
             {
-                Console.WriteLine("{0} is not a valid card number");
+                Console.WriteLine("{0} is not a valid card");
             }
             else // runs if card it valid
             {
@@ -46,11 +46,11 @@ namespace Project2
             }
         }
 
-        /// <summary>
-        /// This method checks the validity of the credit card number
+        /// <summary>method
+        /// <c>checkCredit</c>
         /// </summary>
         /// <param name="cardNum"></param>
-        /// <returns></returns>
+        /// <returns>boolean</returns>
         private Boolean checkCredit(int cardNum)
         {
             if (cardNum >= 10000000 && cardNum <= 99999999) // card is an 8 digit number
