@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lilju\\Desktop\\REPO\\445\\Project2\\Project2\\Project2.csproj": {}
+    "C:\\Users\\anya5\\source\\repos\\445\\Project2\\Project2\\Project2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lilju\\Desktop\\REPO\\445\\Project2\\Project2\\Project2.csproj": {
+    "C:\\Users\\anya5\\source\\repos\\445\\Project2\\Project2\\Project2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lilju\\Desktop\\REPO\\445\\Project2\\Project2\\Project2.csproj",
+        "projectUniqueName": "C:\\Users\\anya5\\source\\repos\\445\\Project2\\Project2\\Project2.csproj",
         "projectName": "Project2",
-        "projectPath": "C:\\Users\\lilju\\Desktop\\REPO\\445\\Project2\\Project2\\Project2.csproj",
-        "packagesPath": "C:\\Users\\lilju\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lilju\\Desktop\\REPO\\445\\Project2\\Project2\\obj\\",
+        "projectPath": "C:\\Users\\anya5\\source\\repos\\445\\Project2\\Project2\\Project2.csproj",
+        "packagesPath": "C:\\Users\\anya5\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anya5\\source\\repos\\445\\Project2\\Project2\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lilju\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\anya5\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
