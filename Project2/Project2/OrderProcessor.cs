@@ -8,6 +8,7 @@ namespace Project2
     public delegate void orderSuccess(string senderID, double total, double ticketPrice, int numTickets);
     public class OrderProcessor
     {
+        
         public static event orderSuccess OrderProcess;
         public  void ProcessComplete(string senderID, double total, double ticketPrice, int numTickets)
         {
