@@ -37,7 +37,6 @@ namespace Project2
 
         }
        
-        
         /// <summary>method
         /// <c>CreditCardNum</c>
         /// Randomizes a credit card number for each order
@@ -111,14 +110,11 @@ namespace Project2
             return null;
 
         }
-        
         /// <summary>method
         /// <c>TicketOnSale</c>
         /// uses readerwriterlock to add an order when a pricecut happens
         /// </summary>
         /// <returns>void</returns>
-        /// 
-
         public void TicketOnSale(double price, double priceDiff, string park)
         { // Event handler // order chickens from chicken farm – send order into queue
             
@@ -133,13 +129,21 @@ namespace Project2
                 {
                     eCommerce.rwLock.ReleaseWriterLock();
                 }
-         
-        }
-        public void OP(string senderID, double total, double ticketPrice, int numTickets)
-        {
-            Console.WriteLine("Order Processed! Ticket Agency {0} order is processed. The total amount that has been charged is $" + total +
-                ". A total of " + numTickets + "have been bought for a unit price of " + ticketPrice, senderID);
-        }
+            
+            
+            
 
+         
+         
+
+            
+                
+            
+
+
+                // It prints thread name }
+
+        
+        }
     }
 }

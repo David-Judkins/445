@@ -16,7 +16,7 @@ namespace Project2
     class DisneyLand
     {
         static Random rng = new Random(); // To generate random numbers 
-        public static event priceCutEventDL priceCut; 
+        public static event priceCutEventDL priceCut;
         private OrderProcessor OP = new OrderProcessor();
         private static double ticketPrice = 10;
         private static int priceCutCount = 0;
@@ -69,6 +69,7 @@ namespace Project2
         /// <returns>void</returns>
         public void PricingModel()
         {
+            
              
             while(priceCutCount < 20)
             {
@@ -90,7 +91,8 @@ namespace Project2
                 {
                     if ("DisneyLand" == order.getReceiverID())
                     {
-                        
+                        currentAmount = order.getAmount();
+                        Thread orderProcess = new Thread(new ThreadStart(OP.
                         eCommerce.buffer.eraseACell(order);
                         
 

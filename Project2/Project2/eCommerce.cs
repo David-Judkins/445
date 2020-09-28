@@ -19,18 +19,16 @@ namespace Project2
             Thread legoland = new Thread(new ThreadStart(ticketLL.PricingModel)); 
             Thread disneyland = new Thread(new ThreadStart(ticketDL.PricingModel));
 
-            
+            OrderProcessor processModel = new OrderProcessor();
             
             legoland.Name = "LegoLand"; 
             disneyland.Name = "DisneyLand";
             disneyland.Start();
             legoland.Start();
             TicketAgency ticketAgency = new TicketAgency();
-            OrderProcessor op = new OrderProcessor();
-
             LegoLand.priceCut += new priceCutEventLL(ticketAgency.TicketOnSale);
             DisneyLand.priceCut += new priceCutEventDL(ticketAgency.TicketOnSale);
-            OrderProcessor.OrderProcess += new orderSuccess(ticketAgency.OP);
+            //OrderProcessor.OrderProcess += new orderSuccess(ticketAgency.);
 
             Thread[] ticketAgencies = new Thread[5];
             for (int i = 0; i < 5; i++)
