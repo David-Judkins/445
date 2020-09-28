@@ -8,7 +8,6 @@ namespace Project2
     /// <c>LegoLand</c>
     /// represents legoland park
     /// </summary>
-    
     public class LegoLand
     {
         static Random rng = new Random(); // To generate random numbers 
@@ -56,31 +55,33 @@ namespace Project2
 
             while(priceCutCount < 20)
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(300);
                 OrderClass order = null;
-               
-                    eCommerce.rwLock.AcquireReaderLock(Timeout.Infinite);
-                    try
-                    {
-                        order = eCommerce.buffer.getACell();
+                //locks out other readers from the buffer  
+                eCommerce.rwLock.AcquireReaderLock(Timeout.Infinite);
+                try
+                {
+                    order = eCommerce.buffer.getACell();
                         
-                    }
-                    finally
+                }
+                finally
+                {
+                    //lets go of the lock on other readers to the buffer
+                    eCommerce.rwLock.ReleaseReaderLock();
+                }
+                if (order != null)
+                {
+                    if ("LegoLand" == order.getReceiverID())
                     {
-                        eCommerce.rwLock.ReleaseReaderLock();
-                    }
-                    if (order != null)
-                    {
-                        if ("LegoLand" == order.getReceiverID())
-                        {
-                            OrderProcessor orderProc = new OrderProcessor();
-                            Thread orderProcessorThread = new Thread(new ThreadStart(() => orderProc.orderProcessing(order)));
-                            orderProcessorThread.Start();
-                            eCommerce.buffer.eraseACell(order);
-
-                        }
+                        
+                        OrderProcessor orderProc = new OrderProcessor();//creates a new OrderProcessor object to access its methods
+                        Thread orderProcessorThread = new Thread(new ThreadStart(() => orderProc.orderProcessing(order)));//starts a new order process thread with the orderProcessing method 
+                        orderProcessorThread.Start();
+                        eCommerce.buffer.eraseACell(order);//erases the cell that was gotten while the reader lock was acquired
 
                     }
+
+                }
 
 
 

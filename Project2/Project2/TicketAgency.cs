@@ -14,13 +14,8 @@ namespace Project2
         /// <returns>void</returns>
         public void RetailerFunc()
         { 
-             
-            Random rand = new Random();
-            LegoLand ticket = new LegoLand();
-            DisneyLand ticket1 = new DisneyLand();
-            OrderProcessor newProccess = new OrderProcessor();
             
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 100; i++)
             {
                 
                     Thread.Sleep(500);
