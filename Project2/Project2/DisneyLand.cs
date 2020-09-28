@@ -68,7 +68,7 @@ namespace Project2
    
             while(priceCutCount < 20)
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
                 OrderClass order = null;
                
                     eCommerce.rwLock.AcquireReaderLock(Timeout.Infinite);
