@@ -135,6 +135,14 @@ namespace Project2
                 }
          
         }
+
+        /// <summary>
+        /// Takes in parameters and prints them in a statements to declare that the order has been prcocessed.
+        /// </summary>
+        /// <param name="senderID"></param>
+        /// <param name="total"></param>
+        /// <param name="ticketPrice"></param>
+        /// <param name="numTickets"></param>
         public void OrderSuccess(string senderID, double total, double ticketPrice, int numTickets)
         {
             Console.WriteLine("Order Processed! Ticket Agency {0} order is processed. The total amount that has been charged is $" + total +
