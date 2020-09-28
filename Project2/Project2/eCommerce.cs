@@ -30,7 +30,7 @@ namespace Project2
 
             LegoLand.priceCut += new priceCutEventLL(ticketAgency.TicketOnSale);
             DisneyLand.priceCut += new priceCutEventDL(ticketAgency.TicketOnSale);
-            OrderProcessor.OrderProcess += new orderSuccess(ticketAgency.OP);
+            OrderProcessor.OrderProcess += new orderSuccess(ticketAgency.OrderSuccess);
 
             Thread[] ticketAgencies = new Thread[5];
             for (int i = 0; i < 5; i++)

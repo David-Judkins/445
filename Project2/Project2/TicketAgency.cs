@@ -135,7 +135,7 @@ namespace Project2
                 }
          
         }
-        public void OP(string senderID, double total, double ticketPrice, int numTickets)
+        public void OrderSuccess(string senderID, double total, double ticketPrice, int numTickets)
         {
             Console.WriteLine("Order Processed! Ticket Agency {0} order is processed. The total amount that has been charged is $" + total +
                 ". A total of " + numTickets + "have been bought for a unit price of " + ticketPrice, senderID);
