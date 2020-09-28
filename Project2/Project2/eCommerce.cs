@@ -3,7 +3,8 @@ using System.Threading;
 namespace Project2
     /*
      * Team Members: David Judkins (50%) and Anna McDonald(50%)
-     * Both members worked together throughout the whole project and debugged together through Zoom.
+     * Both members worked together throughout the whole project, David focused more on the server side and Anna
+     * focused more on the client side. We worked on everything mostly conccurently over zoom. The multicellbuffer was mainly shared.
      */
 
 {
@@ -13,7 +14,10 @@ namespace Project2
     {
         public static MultiCellBuffer buffer = new MultiCellBuffer();
         public static ReaderWriterLock rwLock = new ReaderWriterLock();
-
+        /// <summary>method
+        /// <c>Main</c>
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             

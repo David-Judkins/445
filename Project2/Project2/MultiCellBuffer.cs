@@ -12,7 +12,7 @@ namespace Project2
     public class MultiCellBuffer
     {
         private Semaphore mutex = new Semaphore(0, 3);
-        private OrderClass[] orderBuffer = new OrderClass[3];
+        private OrderClass[] orderBuffer = new OrderClass[4];
         /// <summary>contructor
         /// <c>MultiCellBuffer</c>
         /// sets and empty list and sets the semaphore to represent a full list
@@ -63,11 +63,10 @@ namespace Project2
                     {
                         Console.WriteLine("The order has been sent to buffer cell " + i + " for " + order.getReceiverID() + "\n");
                         orderBuffer[i] = order;
-                        i = 3;
+                        i = 4;
                     }
                 }
-                
-                
+    
             }
             
             
@@ -87,7 +86,7 @@ namespace Project2
                     mutex.Release();
                     Console.WriteLine("An order from buffer cell " + i + " has been received by " + orderBuffer[i].getReceiverID() + "\n");
                     orderBuffer[i] = null;
-                    i = 3;
+                    i = 4;
                 }
             }
         }
