@@ -40,7 +40,7 @@ namespace Project2
                 {
                     if(orderBuffer[i] == null)
                     {
-                        Console.WriteLine("The order has been sent to buffer cell " + i + " for " + order.getReceiverID());
+                        Console.WriteLine("The order has been sent to buffer cell " + i + " for " + order.getReceiverID() + "\n");
                         orderBuffer[i] = order;
                         i = 3;
                     }
@@ -82,7 +82,7 @@ namespace Project2
                  if(orderBuffer[i] == order)
                 {
                     mutex.Release();
-                    Console.WriteLine("An order from buffer cell " + i + " has been received by " + orderBuffer[i].getReceiverID());
+                    Console.WriteLine("An order from buffer cell " + i + " has been received by " + orderBuffer[i].getReceiverID() + "\n");
                     orderBuffer[i] = null;
                     i = 3;
                 }

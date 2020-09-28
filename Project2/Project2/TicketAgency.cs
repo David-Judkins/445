@@ -29,7 +29,7 @@ namespace Project2
                 
                     Thread.Sleep(500);
                     senderID = Thread.CurrentThread.Name; // checks what ticket agency is running every 500 ms 10 seconds
-
+                    
 
 
 
@@ -102,7 +102,7 @@ namespace Project2
             cardNum = CreditCardNum();
             if(ticketAmount != -1)
             {
-                Console.WriteLine("Price Cut at {1}! Travel Agency {0} will send an order for {2} tickets at ${3} each", senderID, Thread.CurrentThread.Name
+                Console.WriteLine("Price Cut at {1}! Travel Agency {0} will send an order for {2} tickets at ${3} each\n", senderID, Thread.CurrentThread.Name
                 , ticketAmount, unitPrice);
                 OrderClass newOrder = new OrderClass(senderID, cardNum, park, ticketAmount, unitPrice);
                 return newOrder;
@@ -122,7 +122,7 @@ namespace Project2
         public void TicketOnSale(double price, double priceDiff, string park)
         { // Event handler // order chickens from chicken farm – send order into queue
             
-              eCommerce.rwLock.AcquireWriterLock(300);
+                eCommerce.rwLock.AcquireWriterLock(300);
                 try
                 {
                     OrderClass order = CreateOrder(price, priceDiff, park, senderID);
@@ -138,7 +138,7 @@ namespace Project2
         public void OrderSuccess(string senderID, double total, double ticketPrice, int numTickets)
         {
             Console.WriteLine("Order Processed! Ticket Agency {0} order is processed. The total amount that has been charged is $" + total +
-                ". A total of " + numTickets + "have been bought for a unit price of " + ticketPrice, senderID);
+                ". A total of " + numTickets + "have been bought for a unit price of " + ticketPrice + "\n", senderID);
         }
 
     }
