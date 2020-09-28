@@ -37,10 +37,7 @@ namespace Project2
 
         }
        
-        public void OrderProcess(string senderID, Int32 total, Int32 ticketPrice, Int32 numTickets)
-        {
-            Console.WriteLine("Order Processed! Ticket Agency {0} order is processed. The total amount that has been charged is $" + total + ". A total of " + numTickets + "have been bought for a unit price of " + ticketPrice, senderID, Thread.CurrentThread.Name);
-        }
+        
         /// <summary>method
         /// <c>CreditCardNum</c>
         /// Randomizes a credit card number for each order
@@ -64,7 +61,7 @@ namespace Project2
         /// calculates the ticket amount based off the price difference of each price cut
         /// </summary>
         /// <returns>int</returns>
-        public int TicketAmount(int priceDiff, string parkName) {
+        public int TicketAmount(double priceDiff, string parkName) {
             Random rand = new Random();
             if (parkName == "LegoLand") {
                 if(priceDiff <= 10){
@@ -97,7 +94,7 @@ namespace Project2
         /// Creates and returns and order
         /// </summary>
         /// <returns>OrderClass</returns>
-        public OrderClass CreateOrder(double unitPrice, int priceDiff, string park, string senderID)
+        public OrderClass CreateOrder(double unitPrice, double priceDiff, string park, string senderID)
         {
             int cardNum;
             int ticketAmount;
@@ -114,12 +111,15 @@ namespace Project2
             return null;
 
         }
+        
         /// <summary>method
         /// <c>TicketOnSale</c>
         /// uses readerwriterlock to add an order when a pricecut happens
         /// </summary>
         /// <returns>void</returns>
-        public void TicketOnSale(double price, int priceDiff, string park)
+        /// 
+
+        public void TicketOnSale(double price, double priceDiff, string park)
         { // Event handler // order chickens from chicken farm – send order into queue
             
               eCommerce.rwLock.AcquireWriterLock(300);
@@ -133,21 +133,13 @@ namespace Project2
                 {
                     eCommerce.rwLock.ReleaseWriterLock();
                 }
-            
-            
-            
-
          
-         
-
-            
-                
-            
-
-
-                // It prints thread name }
-
-        
         }
+        public void OP(string senderID, double total, double ticketPrice, int numTickets)
+        {
+            Console.WriteLine("Order Processed! Ticket Agency {0} order is processed. The total amount that has been charged is $" + total +
+                ". A total of " + numTickets + "have been bought for a unit price of " + ticketPrice, senderID);
+        }
+
     }
 }

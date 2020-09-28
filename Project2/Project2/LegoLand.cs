@@ -16,7 +16,7 @@ namespace Project2
     {
         static Random rng = new Random(); // To generate random numbers 
         public static event priceCutEventLL priceCut; // Link event to delegate 
-        private OrderProcessor OP = new OrderProcessor();
+        private OrderProcessor orderProc = new OrderProcessor();
         private static double ticketPrice = 10;
         private static int priceCutCount = 0;
         private static double priceDiff;
